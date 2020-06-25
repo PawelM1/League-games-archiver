@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1"
+      fx:controller="app.Controller.GamesController">
+    <HBox alignment="CENTER_LEFT" spacing="20.0">
+        <VBox.margin>
+            <Insets top="15.0"/>
+        </VBox.margin>
+        <ComboBox fx:id="seasonComboBox" onAction="#setGamesOnSeasonChange" prefWidth="150.0"
+                  promptText="%Games.Combobox1">
+            <HBox.margin>
+                <Insets left="10.0"/>
+            </HBox.margin>
+        </ComboBox>
+        <ComboBox fx:id="leagueComboBox" onAction="#setGamesOnLeagueChange" prefWidth="150.0"
+                  promptText="%Games.Combobox2"/>
+    </HBox>
+    <TableView fx:id="gamesTableView" editable="true">
+        <columns>
+            <TableColumn fx:id="leagueColumn" editable="false" prefWidth="75.0" text="%Games.TableView.c8"/>
+            <TableColumn fx:id="hostTeamColumn" editable="false" prefWidth="75.0" text="%Games.TableView.c1"/>
+            <TableColumn fx:id="guestTeamColumn" editable="false" prefWidth="75.0" text="%Games.TableView.c2"/>
+            <TableColumn fx:id="hostGoalColumn" onEditCommit="#editHostGoal" prefWidth="75.0"
+                         text="%Games.TableView.c3"/>
+            <TableColumn fx:id="guestGoalColumn" onEditCommit="#editGuestGoal" prefWidth="75.0"
+                         text="%Games.TableView.c4"/>
+            <TableColumn fx:id="gameDateColumn" onEditCommit="#editGameDate" prefWidth="75.0"
+                         text="%Games.TableView.c5"/>
+        </columns>
+        <VBox.margin>
+            <Insets left="10.0" right="10.0" top="20.0"/>
+        </VBox.margin>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+</VBox>

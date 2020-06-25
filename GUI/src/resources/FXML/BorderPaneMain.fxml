@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" id="BorderPane" fx:id="borderPane" maxHeight="1.7976931348623157E308"
+            maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
+            prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1"
+            fx:controller="app.Controller.BorderPaneMainController">
+    <top>
+        <VBox alignment="TOP_CENTER" style="-fx-border-color: #1c313a; -fx-border-width: 0px 0px 2px 0px;"
+              BorderPane.alignment="TOP_LEFT">
+            <StackPane alignment="TOP_LEFT" style="-fx-border-color: #1c313a; -fx-border-width: 0px 0px 1px 0px;">
+                <HBox alignment="CENTER_LEFT">
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <HBox.margin>
+                            <Insets left="5.0" right="5.0"/>
+                        </HBox.margin>
+                        <Image url="@../../icons/stageicon.png"/>
+                    </ImageView>
+                    <Label id="StageTitle" alignment="CENTER" contentDisplay="CENTER" text="%tittle.application"/>
+                </HBox>
+                <HBox alignment="TOP_RIGHT" spacing="5.0">
+                    <Button layoutX="1133.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#min"
+                            style="-fx-border-width: 0;" styleClass="stageButton">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@../../icons/min.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="maxMinWindowButton" mnemonicParsing="false" onMouseClicked="#max"
+                            style="-fx-border-width: 0;" styleClass="stageButton">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@../../icons/max.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button mnemonicParsing="false" onMouseClicked="#close" style="-fx-border-width: 0;"
+                            styleClass="stageButtonClose">
+                        <graphic>
+                            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="@../../icons/close.png"/>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </HBox>
+            </StackPane>
+            <MenuBar id="MenuBar" fx:id="myMenuBar">
+                <Menu mnemonicParsing="false" text="%file">
+                    <MenuItem mnemonicParsing="false" onAction="#closeApplication" text="%close"/>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%language">
+                    <RadioMenuItem fx:id="englishRadioItem" mnemonicParsing="false" onAction="#setEnglishLanguage"
+                                   text="%English">
+                        <toggleGroup>
+                            <ToggleGroup fx:id="languageGroup"/>
+                        </toggleGroup>
+                    </RadioMenuItem>
+                    <RadioMenuItem fx:id="polishRadioItem" mnemonicParsing="false" onAction="#setPolishLanguage"
+                                   text="%Polish" toggleGroup="$languageGroup"/>
+                </Menu>
+                <Menu mnemonicParsing="false" text="%help">
+                    <MenuItem mnemonicParsing="false" onAction="#about" text="%about"/>
+                </Menu>
+            </MenuBar>
+            <fx:include fx:id="menuButton" source="MenuButton.fxml"/>
+        </VBox>
+    </top>
+</BorderPane>

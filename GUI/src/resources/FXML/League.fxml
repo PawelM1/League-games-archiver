@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1"
+      fx:controller="app.Controller.LeagueController">
+    <HBox>
+        <VBox.margin>
+            <Insets top="15.0"/>
+        </VBox.margin>
+        <ComboBox fx:id="seasonComboBox" onAction="#actionOnSeasonChange" prefWidth="150.0"
+                  promptText="%League.Combobox1">
+            <HBox.margin>
+                <Insets left="10.0"/>
+            </HBox.margin>
+        </ComboBox>
+        <ComboBox fx:id="countryComboBox" onAction="#actionOnCountryChange" prefWidth="150.0"
+                  promptText="%League.Combobox2">
+            <HBox.margin>
+                <Insets left="20.0"/>
+            </HBox.margin>
+        </ComboBox>
+        <ComboBox fx:id="leagueComboBox" onAction="#actionOnLeagueChange" prefWidth="150.0"
+                  promptText="%League.Combobox3">
+            <HBox.margin>
+                <Insets left="20.0"/>
+            </HBox.margin>
+        </ComboBox>
+    </HBox>
+    <TableView fx:id="teamTableView" onMouseClicked="#showTeamDetail">
+        <columns>
+            <TableColumn fx:id="placeColumn" maxWidth="120.0" minWidth="100.0" style="-fx-alignment:CENTER;"
+                         text="%LeagueTableView.c1"/>
+            <TableColumn fx:id="teamColumn" maxWidth="1500.0" minWidth="120.0" prefWidth="120.0"
+                         text="%LeagueTableView.c2"/>
+            <TableColumn fx:id="pointsColumn" maxWidth="120.0" minWidth="100.0" sortType="DESCENDING"
+                         style="-fx-alignment:CENTER;" text="%LeagueTableView.c3"/>
+            <TableColumn fx:id="matchesColumn" maxWidth="120.0" minWidth="100.0" style="-fx-alignment:CENTER;"
+                         text="%LeagueTableView.c4"/>
+            <TableColumn fx:id="wonColumn" maxWidth="120.0" minWidth="100.0" style="-fx-alignment:CENTER;"
+                         text="%LeagueTableView.c5"/>
+            <TableColumn fx:id="drawColumn" maxWidth="120.0" minWidth="100.0" prefWidth="100.0"
+                         style="-fx-alignment:CENTER;" text="%LeagueTableView.c6"/>
+            <TableColumn fx:id="looseColumn" maxWidth="120.0" minWidth="100.0" prefWidth="100.0"
+                         style="-fx-alignment:CENTER;" text="%LeagueTableView.c7"/>
+            <TableColumn fx:id="scoreGoalsColumn" maxWidth="120.0" minWidth="100.0" prefWidth="100.0"
+                         style="-fx-alignment:CENTER;" text="%LeagueTableView.c8"/>
+            <TableColumn fx:id="looseGoalsColumn" maxWidth="120.0" minWidth="100.0" style="-fx-alignment:CENTER;"
+                         text="%LeagueTableView.c9"/>
+            <TableColumn fx:id="balanceColumn" maxWidth="120.0" minWidth="100.0" sortable="false"
+                         style="-fx-alignment:CENTER;" text="%LeagueTableView.c10"/>
+            <TableColumn fx:id="deleteColumn" maxWidth="10.0" sortable="false" style="-fx-alignment:CENTER;"
+                         text="%LeagueTableView.c11"/>
+        </columns>
+        <VBox.margin>
+            <Insets left="10.0" right="10.0" top="20.0"/>
+        </VBox.margin>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+    <HBox alignment="TOP_CENTER">
+        <Button fx:id="addTeamButton" mnemonicParsing="false" onAction="#openAddTeamDialog" text="%League.button2">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../icons/add_something.png"/>
+                </ImageView>
+            </graphic>
+            <HBox.margin>
+                <Insets left="10.0" top="20.0"/>
+            </HBox.margin>
+        </Button>
+        <Button fx:id="addMatchButton" layoutX="624.0" layoutY="30.0" mnemonicParsing="false"
+                onAction="#openAddGameDialog" text="%League.button3">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../icons/add_something.png"/>
+                </ImageView>
+            </graphic>
+            <HBox.margin>
+                <Insets left="10.0" top="20.0"/>
+            </HBox.margin>
+        </Button>
+    </HBox>
+</VBox>

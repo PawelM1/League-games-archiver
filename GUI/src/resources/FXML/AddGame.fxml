@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<StackPane minWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Controller.AddGameController">
+    <VBox alignment="TOP_CENTER" maxWidth="220.0" nodeOrientation="LEFT_TO_RIGHT">
+        <GridPane prefHeight="400.0" prefWidth="214.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <ComboBox fx:id="hTeamComboBox" minWidth="155.0" prefHeight="26.0" promptText="%AddGame.combobox1" GridPane.halignment="CENTER" />
+            <ComboBox fx:id="gTeamCombobox" minWidth="155.0" promptText="%AddGame.combobox2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <TextField fx:id="hScore" maxWidth="175.0" promptText="%AddGame.textfield1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <TextField fx:id="gScore" maxWidth="175.0" promptText="%AddGame.textfield2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <DatePicker fx:id="gameDate" editable="false" promptText="%AddGame.DataPicker1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+        </GridPane>
+        <HBox alignment="CENTER" minWidth="380.0" spacing="40.0">
+            <padding>
+                <Insets bottom="20.0" top="20.0" />
+            </padding>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#addMatchToDB" text="%AddGame.button1" />
+            <Button fx:id="cancelButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#closeDialog" text="%AddGame.button2" />
+        </HBox>
+    </VBox>
+</StackPane>

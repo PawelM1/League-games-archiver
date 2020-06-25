@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle12cDialect</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:LIGI</property>
+        <property name="hibernate.connection.username">pawel</property>
+        <property name="hibernate.connection.password">projekt</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="connection.pool_size">10000000</property>
+    </session-factory>
+</hibernate-configuration>
